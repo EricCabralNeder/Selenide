@@ -79,9 +79,10 @@ public class TestePage {
 	/**
 	 * Clicar no link HOME do menu
 	 */
-	public static void clickHomeMenuItem(){
-		wait.until(ExpectedConditions.visibilityOfElementLocated(homeMenuItem));
-		driver.findElement(homeMenuItem).click();
+	public static void clickLogin(){
+		
+		driver.findElement(By.xpath("/html/body/div[2]/div/ul/li[10]/a")).click();
+		$(By.id("userId")).click();
 	}	
 	
 	/**

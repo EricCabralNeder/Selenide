@@ -8,7 +8,7 @@ import br.com.eric.common.TestePage;
 
 
 
-public class Teste extends BaseTestCase{
+public class Login extends BaseTestCase{
 	
 	@Before
 	public void before() throws Exception {  
@@ -18,7 +18,7 @@ public class Teste extends BaseTestCase{
 	@Test
 	public void assertHomeScreenTitle() {
 
-		TestePage.clickHomeMenuItem();
+		TestePage.clickLogin();
 		System.out.println("Teste Reprovado");
 	}
 
