@@ -1,22 +1,21 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>Selenide</groupId>
-  <artifactId>Selenide</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
-  <name>Selenide</name>
-  <url>http://maven.apache.org</url>
-  
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>Selenide</groupId>
+	<artifactId>Selenide</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>Selenide</name>
+	<url>http://maven.apache.org</url>
 
-<properties>
-    <aspectj.version>1.8.10</aspectj.version>
-</properties>
+	<properties>
+		<aspectj.version>1.8.10</aspectj.version>
+	</properties>
 
-
-<build>
-    <plugins>
-        <plugin>
+	<build>
+		<plugins>
+			<plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
             <version>2.20</version>
@@ -31,7 +30,14 @@
                         <value>io.qameta.allure.junit4.AllureJunit4</value>
                     </property>
                 </properties>
+                <systemProperties> 
+                    <property>
+                        <name>allure.results.directory</name>
+                        <value>${project.build.directory}/allure-results</value>
+                    </property>
+                </systemProperties>
             </configuration>
+
             <dependencies>
                 <dependency>
                     <groupId>org.aspectj</groupId>
@@ -40,66 +46,75 @@
                 </dependency>
             </dependencies>
         </plugin>
-    </plugins>
-</build>
+		</plugins>
+	</build>
 
-  <dependencies>
-  
-<!-- https://mvnrepository.com/artifact/junit/junit -->
-<dependency>
-    <groupId>junit</groupId>
-    <artifactId>junit</artifactId>
-    <version>4.13</version>
-    <scope>test</scope>
-</dependency>
-    
-    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-<dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-java</artifactId>
-    <version>3.141.59</version>
-</dependency>
+	<dependencies>
 
-<!-- https://mvnrepository.com/artifact/com.codeborne/selenide -->
-<dependency>
-    <groupId>com.codeborne</groupId>
-    <artifactId>selenide</artifactId>
-    <version>5.6.0</version>
-</dependency>
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13</version>
+			<scope>test</scope>
+		</dependency>
 
-<dependency>
-       <groupId>org.slf4j</groupId>
-       <artifactId>slf4j-api</artifactId>
-       <version>1.7.5</version>
-   </dependency>
-   <dependency>
-       <groupId>org.slf4j</groupId>
-       <artifactId>slf4j-log4j12</artifactId>
-       <version>1.7.5</version>
-   </dependency>
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.141.59</version>
+		</dependency>
 
-<!-- https://mvnrepository.com/artifact/com.tngtech.java/junit-dataprovider -->
-<dependency>
-    <groupId>com.tngtech.java</groupId>
-    <artifactId>junit-dataprovider</artifactId>
-    <version>1.13.1</version>
-    <scope>test</scope>
-</dependency>
+		<!-- https://mvnrepository.com/artifact/com.codeborne/selenide -->
+		<dependency>
+			<groupId>com.codeborne</groupId>
+			<artifactId>selenide</artifactId>
+			<version>5.6.0</version>
+		</dependency>
 
-<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
-<dependency>
-    <groupId>org.postgresql</groupId>
-    <artifactId>postgresql</artifactId>
-    <version>42.2.12</version>
-</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.5</version>
+		</dependency>
 
-<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-junit4 -->
-<dependency>
-    <groupId>io.qameta.allure</groupId>
-    <artifactId>allure-junit4</artifactId>
-    <version>2.13.3</version>
-    <scope>test</scope>
-</dependency>
+		<!-- https://mvnrepository.com/artifact/com.tngtech.java/junit-dataprovider -->
+		<dependency>
+			<groupId>com.tngtech.java</groupId>
+			<artifactId>junit-dataprovider</artifactId>
+			<version>1.13.1</version>
+			<scope>test</scope>
+		</dependency>
 
-</dependencies>
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.12</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-junit4</artifactId>
+			<version>2.13.1</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-maven</artifactId>
+			<version>2.9</version>
+			<scope>test</scope>
+		</dependency>
+
+
+	</dependencies>
+
+
 </project>
